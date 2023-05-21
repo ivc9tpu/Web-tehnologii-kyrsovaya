@@ -162,12 +162,14 @@ export default {
         }),
         searchedCategories() {
             return this.categories.filter((c) => {
-                return c.name.includes(this.categorySearchQuery)
+                let tmp = c.name
+                return tmp.toLowerCase().includes(this.categorySearchQuery.toLowerCase())
             })
         },
         searchedItems() {
             return this.items.filter((c) => {
-                return c.title.includes(this.itemSearchQuery)
+                let tmp = c.title
+                return tmp.toLowerCase().includes(this.itemSearchQuery.toLowerCase())
             })
         }
     }
